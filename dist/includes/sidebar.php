@@ -154,18 +154,16 @@
                   <p>Supplies</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="admin.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Admin</p>
+                </a>
+              </li>
             </ul>
           </li>
           
-          <li class="nav-item">
-            <a href="admin.php" class="nav-link">
-              <i class="nav-icon fas fa-map-pin"></i>
-              <p>
-                Admin
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
@@ -177,9 +175,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="report_list.php" class="nav-link">
+                <a href="inventory.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Per Day</p>
+                  <p>Inventory Report</p>
                 </a>
               </li>
               <li class="nav-item">
