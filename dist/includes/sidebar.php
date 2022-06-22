@@ -58,6 +58,36 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
+                Supplies
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="supply.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Inventory</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="stockin.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Stockin</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="stockout.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Stockout</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
                 Tracking
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">2</span>
@@ -95,9 +125,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="outgoing.php" class="nav-link">
+                <a href="supply.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Outgoing</p>
+                  <p>Supplies</p>
                 </a>
               </li>
             </ul>

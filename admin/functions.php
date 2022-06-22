@@ -92,7 +92,34 @@ if (isset($_POST['delete_form']))
 	 mysqli_query($con,"DELETE from form where form_id='$id'") or die(mysqli_error()); 
 	 echo "<script>document.location='forms.php'</script>";   
 }
-
+//Add supply
+if (isset($_POST['add_supply']))
+{
+	$name = $_POST['name'];
+	$desc = $_POST['desc'];
+	$unit = $_POST['unit'];
+	$id = $_SESSION['id'];
+	//$date=date("Y-m-d H:i:s");
+	$reorder=$_POST['reorder'];
+	
+		mysqli_query($con,"INSERT INTO supply(supply_name,supply_desc,supply_unit,supply_reorder) VALUES('$name','$desc','$unit','$reorder')")or die(mysqli_error());  
+		
+			echo "<script>document.location='supply.php'</script>"; 
+}
+//Update supply
+if (isset($_POST['update_supply']))
+{
+	$name = $_POST['name'];
+	$desc = $_POST['desc'];
+	$unit = $_POST['unit'];
+	$id = $_POST['id'];
+	//$date=date("Y-m-d H:i:s");
+	$reorder=$_POST['reorder'];
+	
+		mysqli_query($con,"UPDATE supply SET supply_name='$name',supply_desc='$desc',supply_unit='$unit',supply_reorder='$reorder' where supply_id='$id'") or die(mysqli_error());
+		
+			echo "<script>document.location='supply.php'</script>"; 
+}
 //Add Incoming/Outgoing
 if (isset($_POST['add_incoming']))
 {
@@ -125,6 +152,15 @@ if (isset($_POST['update_incoming']))
 
 	 mysqli_query($con,"UPDATE doc SET doc_name='$client',doc_subject='$subject',doc_desc='$desc',doc_remarks='$remarks' where doc_id='$id'") or die(mysqli_error()); 
 	 echo "<script>document.location='incoming.php'</script>";   
+}
+
+//Delete Supply	
+if (isset($_POST['delete_supply']))
+{
+	$id = $_POST['id'];
+
+	 mysqli_query($con,"DELETE from supply where supply_id='$id'") or die(mysqli_error()); 
+	 echo "<script>document.location='supply.php'</script>";   
 }
 //Update Outgoing
 if (isset($_POST['update_outgoing']))
@@ -290,5 +326,32 @@ if (isset($_POST['update_setting']))
 
 	 mysqli_query($con,"UPDATE setting SET email='$email',`time`='$time' where setting_id='$id'") or die(mysqli_error()); 
 	 echo "<script>document.location='settings.php'</script>";   
+}
+//Add Stockin
+if (isset($_POST['add_stockin']))
+{
+	//$id = $_POST['id'];
+	$name = $_POST['name'];
+	$qty = $_POST['qty'];
+	$date = date("Y-m-d H:i:s");
+	$encoder = $_SESSION['id'];
+
+	mysqli_query($con,"INSERT INTO stockin(supply_id,stockin_qty,stockin_date,admin_id) VALUES('$name','$qty','$date','$encoder')")or die(mysqli_error($con));  
+	mysqli_query($con,"UPDATE supply SET supply_qty=supply_qty+'$qty' where supply_id='$name'") or die(mysqli_error()); 
+	 echo "<script>document.location='stockin.php'</script>";   
+}
+//Add Stockout
+if (isset($_POST['add_stockout']))
+{
+	//$id = $_POST['id'];
+	$name = $_POST['name'];
+	$qty = $_POST['qty'];
+	$date = date("Y-m-d H:i:s");
+	$encoder = $_SESSION['id'];
+	$releasedto = $_POST['releasedto'];
+
+	mysqli_query($con,"INSERT INTO stockout(supply_id,stockout_qty,stockout_date,admin_id,user_id) VALUES('$name','$qty','$date','$encoder','$releasedto')")or die(mysqli_error($con));  
+	mysqli_query($con,"UPDATE supply SET supply_qty=supply_qty-'$qty' where supply_id='$name'") or die(mysqli_error()); 
+	 echo "<script>document.location='stockout.php'</script>";   
 }
 ?>
