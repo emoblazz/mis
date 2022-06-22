@@ -112,6 +112,30 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
               <p>
+                Authority To Travel
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-info right">2</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="travel_add.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Create New TO</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="travel_list.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>View List of TO</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
                 Maintenance
                 <i class="fas fa-angle-left right"></i>
                 <span class="badge badge-info right">2</span>
@@ -132,15 +156,7 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a href="tracked_list.php" class="nav-link">
-              <i class="nav-icon fas fa-map-pin"></i>
-              <p>
-                Tracked List
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a href="admin.php" class="nav-link">
               <i class="nav-icon fas fa-map-pin"></i>

@@ -354,4 +354,41 @@ if (isset($_POST['add_stockout']))
 	mysqli_query($con,"UPDATE supply SET supply_qty=supply_qty-'$qty' where supply_id='$name'") or die(mysqli_error()); 
 	 echo "<script>document.location='stockout.php'</script>";   
 }
+//Add Travel
+if (isset($_POST['add_travel']))
+{
+	
+	$control_no = $_POST['control_no'];
+	//$name = $_POST['name'];
+	$period = $_POST['period'];
+	$purpose = $_POST['purpose'];
+	$type = $_POST['type'];
+	$venue = $_POST['venue'];
+	$coverage = $_POST['coverage'];
+	$source = $_POST['source'];
+	$signatory = $_POST['signatory'];
+	date_default_timezone_set("Asia/Manila"); 
+	$date_created = date("Y-m-d");
+
+	mysqli_query($con,"INSERT INTO travel(control_no,travel_filed,travel_purpose,travel_period,travel_type,travel_venue,travel_coverage,travel_source,user_id) VALUES('$control_no','$date_created','$purpose','$period','$type','$venue','$coverage','$source','$signatory')")or die(mysqli_error($con));  
+
+	$id=mysqli_insert_id($con);
+
+	foreach ($_POST['name'] as $value) {
+		mysqli_query($con,"INSERT INTO travel_details(travel_id,user_id) VALUES('$id','$value')")or die(mysqli_error($con));  
+	}
+	
+	echo "<script type='text/javascript'>alert('Successfully added new travel!');</script>";
+	echo "<script>document.location='travel_view.php?id=$id'</script>";   
+	
+}	
+//Delete Travel	
+if (isset($_POST['delete_travel']))
+{
+	$id = $_POST['id'];
+	
+	 mysqli_query($con,"DELETE from travel where travel_id='$id'") or die(mysqli_error()); 
+	 mysqli_query($con,"DELETE from travel_details where travel_id='$id'") or die(mysqli_error()); 
+	 echo "<script>document.location='travel_list.php'</script>";   
+}
 ?>
