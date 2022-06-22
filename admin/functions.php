@@ -92,6 +92,14 @@ if (isset($_POST['delete_form']))
 	 mysqli_query($con,"DELETE from form where form_id='$id'") or die(mysqli_error()); 
 	 echo "<script>document.location='forms.php'</script>";   
 }
+//Delete Archive	
+if (isset($_POST['delete_archive']))
+{
+	$id = $_POST['id'];
+	
+	 mysqli_query($con,"DELETE from archive where archive_id='$id'") or die(mysqli_error()); 
+	 echo "<script>document.location='archive.php'</script>";   
+}
 //Add supply
 if (isset($_POST['add_supply']))
 {

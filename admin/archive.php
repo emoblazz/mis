@@ -79,7 +79,7 @@
                     $title=$row['archive_title'];
                     $desc=$row['archive_desc'];
                     $date=$row['archive_date'];
-                    $file=$row['archive_file'];
+                    //$file=$row['archive_file'];
                     $i++;      
                   ?>       
                   <tr>
@@ -171,7 +171,7 @@
                               </div>
                               <div class="modal-footer justify-content-between">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-success" name="delete_form">Delete</button>
+                                <button type="submit" class="btn btn-success" name="delete_archive">Delete</button>
                               </div>
                             </form>
                           </div>
