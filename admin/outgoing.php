@@ -7,7 +7,7 @@
   <!-- Google Font: Source Sans Pro -->
   <?php include '../dist/includes/link.php';?>
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -75,7 +75,7 @@
                   <tbody>
                   <?php include '../dist/includes/dbcon.php';    
                   
-                  $query=mysqli_query($con,"select * from doc natural join user  where doc_type='Outgoing' order by doc_date desc")or die(mysqli_error());
+                  $query=mysqli_query($con,"select * from doc natural join admin where doc_type='Outgoing' order by doc_date desc")or die(mysqli_error());
                     $i=0;
                     while ($row=mysqli_fetch_array($query)){
                     $id=$row['doc_id'];
@@ -84,7 +84,7 @@
                     $desc=$row['doc_desc'];
                     $remarks=$row['doc_remarks'];
                     $date=$row['doc_date'];
-                    $name=$row['user_last'].", ".$row['user_first'];
+                    $name=$row['fullname'];
                     $i++;      
                   ?>       
                   <tr>

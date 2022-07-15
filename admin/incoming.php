@@ -75,7 +75,7 @@
                   <tbody>
                   <?php include '../dist/includes/dbcon.php';    
                   
-                  $query=mysqli_query($con,"select * from doc natural join user where doc_type='Incoming' order by doc_date desc")or die(mysqli_error());
+                  $query=mysqli_query($con,"select * from doc natural join admin where doc_type='Incoming' order by doc_date desc")or die(mysqli_error());
                     $i=0;
                     while ($row=mysqli_fetch_array($query)){
                     $id=$row['doc_id'];
@@ -85,7 +85,7 @@
                     $remarks=$row['doc_remarks'];
                     $date=$row['doc_date'];
                     //$type=$row['doc_type'];
-                    $name=$row['user_last'].", ".$row['user_first'];
+                    $name=$row['fullname'];
                     $i++;      
                   ?>       
                   <tr>

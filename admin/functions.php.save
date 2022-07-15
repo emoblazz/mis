@@ -92,14 +92,6 @@ if (isset($_POST['delete_form']))
 	 mysqli_query($con,"DELETE from form where form_id='$id'") or die(mysqli_error()); 
 	 echo "<script>document.location='forms.php'</script>";   
 }
-//Delete Archive	
-if (isset($_POST['delete_archive']))
-{
-	$id = $_POST['id'];
-	
-	 mysqli_query($con,"DELETE from archive where archive_id='$id'") or die(mysqli_error()); 
-	 echo "<script>document.location='archive.php'</script>";   
-}
 //Add supply
 if (isset($_POST['add_supply']))
 {
@@ -139,7 +131,7 @@ if (isset($_POST['add_incoming']))
 	$date=date("Y-m-d H:i:s");
 	$type=$_POST['type'];
 	
-		mysqli_query($con,"INSERT INTO doc(doc_name,doc_subject,doc_desc,doc_remarks,doc_date,admin_id,doc_type) VALUES('$name','$subject','$desc','$remarks','$date','$id','$type')")or die(mysqli_error());  
+		mysqli_query($con,"INSERT INTO doc(doc_name,doc_subject,doc_desc,doc_remarks,doc_date,user_id,doc_type) VALUES('$name','$subject','$desc','$remarks','$date','$id','$type')")or die(mysqli_error());  
 		
 		if ($type=="Incoming")
 		{
@@ -398,22 +390,5 @@ if (isset($_POST['delete_travel']))
 	 mysqli_query($con,"DELETE from travel where travel_id='$id'") or die(mysqli_error()); 
 	 mysqli_query($con,"DELETE from travel_details where travel_id='$id'") or die(mysqli_error()); 
 	 echo "<script>document.location='travel_list.php'</script>";   
-}
-//Add Service Record
-if (isset($_POST['add_record']))
-{	
-	$id = $_POST['id'];
-	$to = $_POST['to'];
-	$from = $_POST['from'];
-	$designation = $_POST['designation'];
-	$status = $_POST['status'];
-	$salary = $_POST['salary'];
-	$station = $_POST['station'];
-	$branch = $_POST['branch'];
-	$remarks = $_POST['remarks'];
-	
-	mysqli_query($con,"INSERT INTO service_record(user_id,service_from,service_to,designation,status,salary,station,branch,service_remarks) VALUES('$id','$from','$to','$designation','$status','$salary','$station','$branch','$remarks')")or die(mysqli_error($con));  
-	//echo "<script type='text/javascript'>alert('Successfully added new service !');</script>";	
-	echo "<script>document.location='service_record.php?id=$id#service_record'</script>";   
 }
 ?>

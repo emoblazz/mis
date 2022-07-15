@@ -140,7 +140,14 @@ include('../dist/includes/dbcon.php');
     </tr>
   <tr>
     <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" colspan=3 height="40" align="left" valign=middle><b><font face="Constantia" color="#000000">Position / Designation</font></b></td>
-    <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 2px solid #000000" colspan=11 align="left" valign=middle><font face="Constantia" color="#000000"><?php echo $row['designation'];?></font></td>
+    <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 2px solid #000000" colspan=11 align="left" valign=middle><font face="Constantia" color="#000000">
+      <?php
+        $query1=mysqli_query($con,"select * from travel_details natural join user natural join user_details where travel_id='$id'")or die(mysqli_error($con));
+            while ($row1=mysqli_fetch_array($query1)){
+              echo strtoupper($row1['designation'])." ";
+        }
+      ?> 
+    </font></td>
     </tr>
   <tr>
     <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 2px solid #000000; border-right: 1px solid #000000" colspan=3 height="40" align="left" valign=middle><b><font face="Constantia" color="#000000">Permanent Station</font></b></td>
