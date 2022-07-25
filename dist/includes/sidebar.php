@@ -32,7 +32,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fa fa-download"></i>
               <p>
                 Downloadables
                 <i class="fas fa-angle-left right"></i>
@@ -42,13 +42,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="archive.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa-solid fa-file-zipper nav-icon"></i>
                   <p>Archive</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="forms.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa-solid fa-file-lines nav-icon"></i>
                   <p>Forms</p>
                 </a>
               </li>
@@ -56,29 +56,53 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fa fa-users"></i>
+              <p>
+                Student Enrollment
+                <i class="fas fa-angle-left right"></i>
+                <span class="badge badge-warning right">2</span>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="register.php" class="nav-link">
+                  <i class="fa fa-user-plus nav-icon"></i>
+                  <p>Register Student</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="enrol.php" class="nav-link">
+                  <i class="fa fa-door-open nav-icon"></i>
+                  <p>Enroll Students</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa-solid fa-boxes-stacked"></i>
               <p>
                 Supplies
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">2</span>
+                <span class="badge badge-danger right">3</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="supply.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa-solid fa-list-check nav-icon"></i>
                   <p>Inventory</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="stockin.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa-solid fa-right-to-bracket nav-icon"></i>
                   <p>Stockin</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="stockout.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa-solid fa-right-from-bracket nav-icon"></i>
                   <p>Stockout</p>
                 </a>
               </li>
@@ -86,7 +110,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fa fa-list"></i>
               <p>
                 Tracking
                 <i class="fas fa-angle-left right"></i>
@@ -96,13 +120,13 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="incoming.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-sign-in nav-icon"></i>
                   <p>Incoming</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="outgoing.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-sign-out nav-icon"></i>
                   <p>Outgoing</p>
                 </a>
               </li>
@@ -114,19 +138,19 @@
               <p>
                 Authority To Travel
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">2</span>
+                <span class="badge badge-success right">2</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="travel_add.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa-solid fa-bus nav-icon"></i>
                   <p>Create New TO</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="travel_list.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa-solid fa-rectangle-list nav-icon"></i>
                   <p>View List of TO</p>
                 </a>
               </li>
@@ -134,17 +158,17 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fa-solid fa-screwdriver-wrench"></i>
               <p>
                 Maintenance
                 <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right">2</span>
+                <span class="badge badge-primary right">3</span>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="user.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa-solid fa-users nav-icon"></i>
                   <p>Users</p>
                 </a>
               </li>
@@ -156,7 +180,7 @@
               </li>
               <li class="nav-item">
                 <a href="admin.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa-solid fa-user-gear nav-icon"></i>
                   <p>Admin</p>
                 </a>
               </li>
@@ -166,7 +190,7 @@
           
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
+              <i class="nav-icon fa-solid fa-chart-pie"></i>
               <p>
                 Reports
                 <i class="fas fa-angle-left right"></i>

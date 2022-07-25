@@ -416,4 +416,37 @@ if (isset($_POST['add_record']))
 	//echo "<script type='text/javascript'>alert('Successfully added new service !');</script>";	
 	echo "<script>document.location='service_record.php?id=$id#service_record'</script>";   
 }
+//Add Student
+if (isset($_POST['add_student']))
+{
+	$last = strtoupper($_POST['last']);
+	$first = strtoupper($_POST['first']);
+	$middle = strtoupper($_POST['middle']);
+	$bday = $_POST['bday'];
+	$contact = $_POST['contact'];
+	$address1 = strtoupper($_POST['address1']);
+	$address2 = $_POST['address2'];
+	$ext = $_POST['ext'];
+	$sex = $_POST['sex'];
+	$sy = $_POST['sy'];
+	$lrn = $_POST['lrn'];
+	$grade = $_POST['grade'];
+	
+	$query=mysqli_query($con,"select * from student where stud_first='$first' and stud_last='$last' and stud_bday='$bday'")or die(mysqli_error($con));
+		$counter=mysqli_num_rows($query);
+		if ($counter == 0) 
+		  {	
+			mysqli_query($con,"INSERT INTO student(stud_lrn,stud_last,stud_first,stud_mi,stud_ext,stud_bday,stud_contact,stud_address1,stud_address2,stud_sex) VALUES('$lrn','$last','$first','$middle','$ext','$bday','$contact','$address1','$address2','$sex')")or die(mysqli_error($con));  
+
+				$id=mysqli_insert_id($con);
+
+				mysqli_query($con,"INSERT INTO enrol(stud_id,sy,grade) VALUES('$id','$sy','$grade')")or die(mysqli_error($con));  
+
+			echo "<script type='text/javascript'>alert('Successfully added new student!');</script>";
+			}
+		else{
+			echo "<script type='text/javascript'>alert('Record already exist!');</script>";
+		}
+			echo "<script>document.location='register.php'</script>"; 
+}
 ?>
